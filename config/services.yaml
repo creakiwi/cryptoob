@@ -13,12 +13,21 @@ services:
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
-    App\:
-        resource: '../src/'
+    Cryptoob\Application\:
+        resource: '../src/Application'
         exclude:
             - '../src/DependencyInjection/'
+            - '../src/Application/Kernel.php'
+    Cryptoob\Business\:
+        resource: '../src/Business'
+    Cryptoob\Infrastructure\:
+        resource: '../src/Infrastructure'
+        exclude:
             - '../src/Entity/'
-            - '../src/Kernel.php'
 
+    Cryptoob\Infrastructure\Api\BinanceApi:
+        arguments:
+            $apiKey: '%env(resolve:BINANCE_API_KEY)%'
+            $apiSecret: '%env(resolve:BINANCE_SECRET_KEY)%'
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

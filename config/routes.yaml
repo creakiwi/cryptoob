@@ -1,5 +1,18 @@
-controllers:
+front:
+    name_prefix: front_
+    prefix:
+        en: ''
+        fr: '/fr'
+    requirements:
+        _locale: 'en|fr'
     resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+        path: ../src/Application/Controller/Front
+        namespace: Cryptoob\Application\Controller\Front
+    type: attribute
+api:
+    name_prefix: api_
+    prefix: /api
+    resource:
+        path: ../src/Application/Controller/Api
+        namespace: Cryptoob\Application\Controller\Api
     type: attribute

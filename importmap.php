@@ -25,4 +25,11 @@ return [
     '@hotwired/turbo' => [
         'version' => '7.3.0',
     ],
+    '@fontsource/kalam' => [
+        'version' => '5.2.5',
+    ],
+    '@fontsource/kalam/index.min.css' => [
+        'version' => '5.2.5',
+        'type' => 'css',
+    ],
 ];
